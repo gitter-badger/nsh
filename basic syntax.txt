@@ -1,0 +1,34 @@
+echo "Hello, world"
+
+# setting variables.
+# better than bash's a=5, i think
+let a = 5
+
+# i guess the '=' could be optional.
+# it seems kind of redundant
+let b $a
+
+# a mathematical expression can be written
+# with brackets around it.
+let c (a * 2)
+# inside brackets, variables don't have to
+# have $ before them
+
+# outside brackets, they do
+echo $a
+
+# the exit status of a program can be got
+# using ~[...]
+let result ~[./hello.py]
+
+# which can also be used inside mathematical
+# expressions
+let result (~[./main.py] * 5)
+
+# the actual output (stdout) from a program
+# can be gotten using ~{...}
+let hello '{echo hello}
+
+# for the '[] and ~{} syntax, i'm not sure if
+# the leading character should be ~ or something
+# else like ' or #, or whatever. what do you think?
